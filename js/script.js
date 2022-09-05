@@ -124,5 +124,41 @@ function creaCartelle(){
     for(var i = 0; i < 6; i++){
         cartella.push(card)
     };
+    
 }
+
 document.getElementById('play').addEventListener('click', creaCartelle);
+// creazione cartella
+function provaCreazione(){
+    // for(let i = 0; i < 9; i++){
+    //     const rigaCartella = document.getElementsByClassName(`riga`);
+    //     const newSquare = document.createElement('div');
+    //     newSquare.classList.add(`cella-cartella`  );
+    
+    //     newSquare.innerHTML = `<h2>${card[i]}</h2>`;
+    //     rigaCartella[i].appendChild(newSquare)
+    // }
+    
+    
+    for (var i = 0; i < 18; i++) {
+        const rigaCartella = document.getElementsByClassName(`riga`);
+            
+            
+        card[i].forEach(element => {
+            
+            newSquare = document.createElement('div');
+            newSquare.classList.add(`cella-cartella`  );
+            newSquare.innerHTML = `<h2>${element}</h2>`;  
+            rigaCartella[i].appendChild(newSquare);
+                
+        });
+        
+        
+    }
+    // for(let k = 0; k<18; k++){
+    //     newSquare.innerHTML = `<h2>${card[i]}</h2>`;  
+    //     rigaCartella[k].appendChild(newSquare)
+    // }
+}
+
+document.getElementById('play').addEventListener('click',provaCreazione );
