@@ -7,6 +7,8 @@
 /* common */
 .text-centering{
     text-align: center;
+    width: 100%;
+    padding: 0 20px;
 }
 main{
     background-color: aqua;
@@ -44,7 +46,7 @@ h1{
     margin: 5px;
     width: calc((100% / 2) - 10px);
 }
-/* singola cella */
+/* singola cella tabellone*/
 .cella{
     width: calc((100% / 5) - 10px);
     border: 1px solid black;
@@ -61,12 +63,16 @@ h1{
 }
 .cartella-singola{
     display: flex;
-    flex-direction:row ;
-    flex-wrap: wrap;
+    flex-direction:column ;
     border: 1px solid red;
-    width: 80%;
+    width: 100%;
     margin: auto;
     background-color: rgb(241, 250, 250);
+}
+.riga{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 .cella-cartella{
     width: calc((100% / 9) - 10px);
