@@ -4,6 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* common */
+.text-centering{
+    text-align: center;
+}
+main{
+    background-color: aqua;
+}
 /* wrapper tabellone 1-4 cartelle */
 .my_wrapper{
     display: flex;
@@ -16,14 +23,14 @@ h1{
 }
 /* wrapper tabellone */
 .my_container{
-    
+    width: 50%;
 }
 /* div contenitore tabellone */
 .tabellone{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 50%;
+    width: 70%;
     margin: auto;
     border: 1px solid black;
     background-color: rgb(241, 250, 250);
@@ -48,18 +55,38 @@ h1{
 .my_col{
     display: flex  ;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
 }
 .cartella-singola{
     display: flex;
     flex-direction:row ;
     flex-wrap: wrap;
     border: 1px solid red;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    background-color: rgb(241, 250, 250);
 }
 .cella-cartella{
-    width: calc((100% / 5) - 10px);
+    width: calc((100% / 9) - 10px);
     margin: 5px;
     border: 1px solid green;
     text-align: center;
+}
+/* cartelle sotto */
+.spazio{
+    width: 20%;
+    
+}
+.cartella-singola-sotto{
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    width: 100%;
+    background-color: rgb(241, 250, 250);
+}
+.spaziamento{
+    margin-top: 20px;
 }
