@@ -118,26 +118,39 @@ var tombola = false;
 // Controllo Premio attivo
 function ActivePrice(){
     var counter = 0;
+    var premio = ""
     if(tombola == true){
         tombola = null;
         counter = 5;
-        return tombola,counter; 
+        premio = "tombola"
+        return tombola,counter, premio
     }
     if(cinquina == true){
         counter = 4
-        return tombola, counter}
+        premio = "cinquina"
+        return [tombola, counter,premio] 
+    }
     if(quaterna == true){
         counter = 3
-        return ciqnuina,counter}
+        premio = "quanterna"
+        return ciqnuina,counter
+    }
     if(terno == true){
         counter = 2
-        return quaterna, counter}
+        premio = "terno"
+        return [quaterna, counter, premio]
+    }
     if(ambo == true){
         counter = 1
-        return terno, counter}
+        premio = "ambo";
+        return [terno, counter, premio]
+    }
  // 0 -si va per l'ambo, 1 si va per la terna, 2 ai va per la quaterna, 3 si va per la cinquina, 4 si va per la tombola, 5 Tombola ottenuta
 }
+var premioScritto = document.getElementById(`premioCorrente`);
+var result = ActivePrice();
 
+premioScritto.innerHTML =`${result[2]}`
 
 // Cambio DELL Premio
 function changePrice(counter){
@@ -170,7 +183,7 @@ function checker(){
                 for(let n =0; n < 3; n++){
                     if(players[i].schede[j][n].includes(extracted[extract.length-1])){
                     players[i].schede[j][n].pop(extracted[extract.length-1])
-                }
+                    }
                 }
 
             }
