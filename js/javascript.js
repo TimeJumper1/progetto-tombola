@@ -123,7 +123,7 @@ function ActivePrice(){
         tombola = null;
         counter = 5;
         premio = "tombola"
-        return tombola,counter, premio
+        return [tombola,counter, premio]
     }
     if(cinquina == true){
         counter = 4
@@ -133,7 +133,7 @@ function ActivePrice(){
     if(quaterna == true){
         counter = 3
         premio = "quanterna"
-        return ciqnuina,counter
+        return [cinquina,counter,premio]
     }
     if(terno == true){
         counter = 2
@@ -147,10 +147,34 @@ function ActivePrice(){
     }
  // 0 -si va per l'ambo, 1 si va per la terna, 2 ai va per la quaterna, 3 si va per la cinquina, 4 si va per la tombola, 5 Tombola ottenuta
 }
-var premioScritto = document.getElementById(`premioCorrente`);
-var result = ActivePrice();
+var testiamoInsime=document.getElementById(`premioCorrente`);
+console.log(testiamoInsime);
+var counter = 0;
+testiamoInsime.addEventListener('click', ()=>{
+    
+    
+        if(counter == 0){
+            ambo = true
+        }
+        if(counter == 1){
+            terno = true
+        }
+        if(counter == 2){
+            quaterna = true
+        }
+        if(counter == 3){
+            cinquina = true
+        }
+        if(counter == 4){
+            tombola = true
+        }
+        var premioScritto = document.getElementById(`premioCorrente`);
+        var result = ActivePrice();
 
-premioScritto.innerHTML =`${result[2]}`
+        premioScritto.innerHTML =`${result[2]}`
+        counter++
+    
+});
 
 // Cambio DELL Premio
 function changePrice(counter){
