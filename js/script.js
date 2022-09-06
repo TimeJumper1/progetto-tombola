@@ -112,11 +112,11 @@ function generaTabella1(){
 var arraySchede = []
 function generaTabella2(){
     
-    
+    test = creaCartelle();
     // tabella 2
     let q = 0;
     for(let i = 3 ; i<6; i++){
-        test = creaCartelle();
+        
         let variabiles = test[q];
         var rigaCartella = document.getElementsByClassName(`riga`);
         
@@ -134,12 +134,12 @@ function generaTabella2(){
 }
 console.log(creaCartelle());
 function generaTabella3(){
-    
+    test = creaCartelle();
     
     // tabella 3
     let q = 0
     for(let i = 6 ; i<9; i++){
-            test = creaCartelle();
+            
         let variabiles = test[q];
         var rigaCartella = document.getElementsByClassName(`riga`);
         
@@ -156,12 +156,12 @@ function generaTabella3(){
     return arraySchede
 }
 function generaTabella4(){
-    
+    test = creaCartelle();
     
     // tabella 4
     let q = 0
     for(let i = 9 ; i<12; i++){
-            test = creaCartelle();
+            
         let variabiles = test[q];
         var rigaCartella = document.getElementsByClassName(`riga`);
         
@@ -178,12 +178,12 @@ function generaTabella4(){
     return arraySchede
 }
 function generaTabella5(){
-    
+    test = creaCartelle();
     
     // tabella 5
     let q = 0
     for(let i = 12 ; i<15; i++){
-            test = creaCartelle();
+            
         let variabiles = test[q];
         var rigaCartella = document.getElementsByClassName(`riga`);
         
@@ -200,12 +200,12 @@ function generaTabella5(){
     return arraySchede
 }
 function generaTabella6(){
-    
+    test = creaCartelle();
     
     // tabella 6
     let q = 0
     for(let i = 15 ; i<18; i++){
-            test = creaCartelle();
+            
         let variabiles = test[q];
         var rigaCartella = document.getElementsByClassName(`riga`);
         
