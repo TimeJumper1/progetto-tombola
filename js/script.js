@@ -37,11 +37,11 @@ function creaCartelle(){
     
     // Buco la prima riga
     tools.distRandInit(9);
-    for (var i = 0; i < 4; i++) card[0][tools.distRandNext()] = -1;
+    for (var i = 0; i < 4; i++) card[0][tools.distRandNext()] = "";
     
     // Buco la seconda riga
     tools.distRandInit(9);
-    for (var i = 0; i < 4; i++) card[1][tools.distRandNext()] = -1;
+    for (var i = 0; i < 4; i++) card[1][tools.distRandNext()] = "";
     
     // Buco la terza riga in funzione delle righe
     // precendenti (ogni colonna deve avere almeno un numero)
@@ -50,8 +50,8 @@ function creaCartelle(){
     while (buchi < 4) {
         const hit = tools.distRandNext();
     
-        if (card[0][hit] != -1 || card[1][hit] != -1) {
-            card[2][hit] = -1;
+        if (card[0][hit] != "" || card[1][hit] != "") {
+            card[2][hit] = "";
             buchi++;
         }
     }
@@ -105,14 +105,14 @@ function generaTabella1(){
     
     
 }
-for(let j = 0 ; j < 9; j++){
+// for(let j = 0 ; j < 9; j++){
     
-}
+// }
 function generaTabella2(){
     
     
     // tabella 2
-    let q = 0
+    let q = 0;
     for(let i = 3 ; i<6; i++){
             test = creaCartelle();
         let variabiles = test[q];
@@ -201,22 +201,97 @@ function generaTabella6(){
         for(let j = 0 ; j < 9; j++){
         
             newSquare = document.createElement('div');
-            newSquare.classList.add(`cella-cartella`  );
-            newSquare.innerHTML = `<h2>${variabiles[j]}</h2>`;  
+            newSquare.classList.add(`cella-cartella`);
+            newSquare.innerHTML = `<h2 id="provaclic" onclick="segnaNumero()">${variabiles[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
+            
         }
         q++
     }
+    
 }
-
-document.getElementById('play1').addEventListener('click', generaTabella1);
-
-
-document.getElementById('play2').addEventListener('click', generaTabella2);
-document.getElementById('play3').addEventListener('click', generaTabella3);
-document.getElementById('play4').addEventListener('click', generaTabella4);
-document.getElementById('play5').addEventListener('click', generaTabella5);
-document.getElementById('play6').addEventListener('click', generaTabella6);
+// function segnaNumero(){
+//     var clickedCell = document.getElementsByClassName(`cella-cartella`);
+//     console.log(clickedCell[0])
+//     for(let j = 0 ; j < 15; j++){
+//         clickedCell[j].classList.add("pecetta");
+//     }
+    
+// }
+function segnaNumero() {
+    // controllo bombe nella casella e controllo vittoria o sconfitta
+    const clickedNumber = parseInt(this.querySelector('div').textContent);
+    if (clickedNumber == Number){
+        this.classList.add('pecetta')
+        
+        
+    }
+}
+// richiamo creazioni cartelle
+function inizioGame(){
+    var select = document.getElementById('playSelect');
+    var value = select.value;
+    
+    if(value == 1){
+        generaTabella1();
+    }else if(value == 2){
+        generaTabella1();
+        generaTabella2();
+    }else if(value == 3){
+        generaTabella1();
+        generaTabella2();
+        generaTabella3();
+    }
+    else if(value == 4){
+        generaTabella1();
+        generaTabella2();
+        generaTabella3();
+        generaTabella4();
+    }
+    else if(value == 5){
+        generaTabella1();
+        generaTabella2();
+        generaTabella3();
+        generaTabella4();
+        generaTabella5();
+    }
+    else if(value == 6){
+        generaTabella1();
+        generaTabella2();
+        generaTabella3();
+        generaTabella4();
+        generaTabella5();
+        generaTabella6();
+    }
+}
+document.getElementById('play').addEventListener('click', inizioGame);
+// // 1 player
+// document.getElementById('play1').addEventListener('click', generaTabella1);
+// // 2 player
+// document.getElementById('play2').addEventListener('click', generaTabella1);
+// document.getElementById('play2').addEventListener('click', generaTabella2);
+// // 3 player
+// document.getElementById('play3').addEventListener('click', generaTabella1);
+// document.getElementById('play3').addEventListener('click', generaTabella2);
+// document.getElementById('play3').addEventListener('click', generaTabella3);
+// // 4 player
+// document.getElementById('play4').addEventListener('click', generaTabella1);
+// document.getElementById('play4').addEventListener('click', generaTabella2);
+// document.getElementById('play4').addEventListener('click', generaTabella3);
+// document.getElementById('play4').addEventListener('click', generaTabella4);
+// // 5 player
+// document.getElementById('play5').addEventListener('click', generaTabella1);
+// document.getElementById('play5').addEventListener('click', generaTabella2);
+// document.getElementById('play5').addEventListener('click', generaTabella3);
+// document.getElementById('play5').addEventListener('click', generaTabella4);
+// document.getElementById('play5').addEventListener('click', generaTabella5);
+// // 5 player
+// document.getElementById('play6').addEventListener('click', generaTabella1);
+// document.getElementById('play6').addEventListener('click', generaTabella2);
+// document.getElementById('play6').addEventListener('click', generaTabella3);
+// document.getElementById('play6').addEventListener('click', generaTabella4);
+// document.getElementById('play6').addEventListener('click', generaTabella5);
+// document.getElementById('play6').addEventListener('click', generaTabella6);
 
 
 
