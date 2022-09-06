@@ -20,7 +20,9 @@
 
      -->
      <header>
+        <div><img src="https://p4.storage.canalblog.com/44/69/906820/91403574.gif"></div>
         <label for="nGiocatori">seleziona numero di giocatori</label>
+        
         <select name="nGiocatori" id="playSelect">
             <option value="1"><a href="#" id="play1">1 player</a></option>
             <option value="2"><a href="#" id="play2">2 player</a></option>
@@ -29,23 +31,23 @@
             <option value="5"><a href="#" id="play5">5 player</a></option>
             <option value="6"><a href="#" id="play6">6 player</a></option>
         </select>
-        <div id="play">
-            start
-        </div>
+        <button id="play">
+            New Game
+        </button>
      </header>
      <main >
         <div id="estrattore" >
-            <h2>numeri usciti</h2>
+            <button>numeri usciti</button>
         </div>
         <div>
-            <h2>si va per <span id="premioCorrente">nessuno</span></h2>
+            <h2>premio in corso: <span id="premioCorrente">premio</span></h2>
         </div>
         <!-- wrapper per posizionamento crtelle 1-4 -->
         <div class="my_wrapper">
             <!-- colonna sinistra -->
             <div class="my_col">
                 <div class="text-centering">
-                    <h2>nome</h2>
+                    <h1>la tua cartella</h1>
                     <div class="cartella-singola">
                         <!-- singola -->
                         <div class="riga " id="0">
@@ -63,7 +65,7 @@
                 </div>
                 
                 <div class="text-centering">
-                    <h2>nome</h2>
+                    <h1>giocatore 2</h1>
                     <div class="cartella-singola">
                         <!-- singola -->
                         <div class="riga " id="3">
@@ -206,7 +208,7 @@
             <!-- colonna destra -->
             <div class="my_col">
                 <div class="text-centering">
-                    <h2>nome</h2>
+                    <h1>giocatore 3</h1>
                     <div class="cartella-singola">
                         <!-- singola -->
                         <div class="riga">
@@ -224,7 +226,7 @@
                 </div>
                 
                 <div class="text-centering">
-                    <h2>nome</h2>
+                    <h1>giocatore 4</h1>
                     <div class="cartella-singola">
                         <!-- singola -->
                         <div class="riga">
@@ -249,7 +251,7 @@
         <section class="my_wrapper spaziamento">
             <!--  singola cella -->
             <div class="spazio text-centering">
-                <h2>nome</h2>
+                <h1>giocatore 5</h1>
                 <div class="cartella-singola-sotto">
                     <!-- singola -->
                     <div class="riga">
@@ -266,7 +268,7 @@
                 </div>
             </div>
             <div class="spazio text-centering">
-                <h2>nome</h2>
+                <h1>giocatore 6</h1>
                 <div class="cartella-singola-sotto">
                     <!-- singola -->
                     <div class="riga">

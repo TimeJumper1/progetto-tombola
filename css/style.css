@@ -1,8 +1,53 @@
+
+/*header*/
+header{
+    background-color: rgba(161, 5, 143, 0.25);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 0;}
+
 /* reset */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+#play{
+    background-color: rgba(22, 39, 39, 0.25);
+    color: rgb(70, 7, 130);
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.25);
+    margin: 5px;
+    border-radius: 31px;
+    height: 80px;
+    width: auto;
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
+    border: 0;
+}
+header label{
+   color: rgb(70, 7, 130);
+}
+#estrattore button{
+    background-color: rgba(22, 39, 39, 0.25);
+    color: rgb(70, 7, 130);
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 31px;
+    height: 20px;
+    width: auto;
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
+    border: 0;
+    margin-left: 10px;
+}
+
+#playSelect{
+    background-color: rgb(179 154 180);
+    color: rgb(70, 7, 130);
 }
 /* common */
 .text-centering{
@@ -11,8 +56,7 @@
     padding: 0 20px;
 }
 main{
-    background-color: aqua;
-}
+    background-color: rgba(161, 5, 143, 0.25);}
 /* wrapper tabellone 1-4 cartelle */
 .my_wrapper{
     display: flex;
@@ -35,21 +79,21 @@ h1{
     width: 100%;
     margin: auto;
     border: 1px solid black;
-    background-color: rgb(241, 250, 250);
+    background-color: rgb(179 154 180);
 }
 /* div contenitore scheda tabellone */
 .scheda-tab{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border: 1px solid red;
+    border: 1px solid black;
     margin: 5px;
     width: calc((100% / 2) - 10px);
 }
 /* singola cella tabellone*/
 .cella{
     width: calc((100% / 5) - 10px);
-    border: 1px solid black;
+    border: 1px solid blue;
     text-align: center;
     margin: 5px;
 }
@@ -64,10 +108,10 @@ h1{
 .cartella-singola{
     display: flex;
     flex-direction:column ;
-    border: 1px solid red;
+    border: 1px solid black;
     width: 100%;
     margin: auto;
-    background-color: rgb(241, 250, 250);
+    background-color: rgb(179 154 180);
 }
 .riga{
     display: flex; 
@@ -77,7 +121,7 @@ h1{
 .cella-cartella{
     width: calc((100% / 9) - 10px);
     margin: 5px;
-    border: 1px solid green;
+    border: 1px solid cadetblue;
     padding: 0 5px;
     display: flex;
     justify-content: center;
@@ -95,13 +139,22 @@ h1{
     display: flex;
     flex-direction:row ;
     flex-wrap: wrap;
-    border: 1px solid red;
+    border: 1px solid black;
     width: 100%;
-    background-color: rgb(241, 250, 250);
+    background-color: rgb(179 154 180);
 }
 .spaziamento{
     margin-top: 20px;
 }
 .pecetta{
     background-color:lime;
+}
+
+main div div h1{
+    color: rgb(70, 7, 130);
+    text-transform: capitalize;
+}
+main section div h1{
+    color: rgb(70, 7, 130);
+    text-transform: capitalize;
 }

@@ -36,15 +36,16 @@ document.getElementById('estrattore').addEventListener('click',() =>{
         list = listExtraction(); 
         prova = false 
     }
-    console.log(extracted)
+    
     let estrattore = document.getElementById(`estrattore`);
     listPop = list.pop();
     estrattore.innerHTML +=` ${listPop} `
     extracted.push(listPop)
     let winner = checker();
     console.log(winner[1])
+    return extracted
 } );
-
+console.log(extracted)
 // SCHEDE CREAZIONE
 function addScheda(){
     var list15 = [];
@@ -202,7 +203,7 @@ function changePrice(counter){
 function checker(){
     var win = false;
     prize = ActivePrice();
-    console.log(players)
+    console.log(players[1].schede[0][1])
     var winner = [];
     if (prize[0] == false && cinquina != true) {
         for(let i = 0; i < players.length; i++){
