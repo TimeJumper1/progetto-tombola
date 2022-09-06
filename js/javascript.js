@@ -41,7 +41,8 @@ document.getElementById('estrattore').addEventListener('click',() =>{
     listPop = list.pop();
     estrattore.innerHTML +=` ${listPop} `
     extracted.push(listPop)
-    
+    let winner = checker();
+    console.log(winner[1])
 } );
 
 // SCHEDE CREAZIONE
@@ -66,7 +67,7 @@ function addScheda(){
 // FUNZIONE UTILI PER TABELLA --------- sequenza di 15 numeri
 function linearNumbers15(num){
     list = [];
-    for(let i = 0; i < num*15;i++){
+    for(let i = 0+num*15; i < (num*15)+15;i++){
         list.push(i+1)
     }
     return list
@@ -75,12 +76,12 @@ function linearNumbers15(num){
 
 /// GIOCATOI
 // - funzione aggiungi giocatore
-function addPlayer(num){
+function addPlayer(num,test){
     for(let i = 0; i < num; i++){
         var giocatore = {
             id: i+1,
             nome:"Giocatore" + i+1,
-            schede: {scheda:addScheda(),}
+            schede: {0:test,}
         }
         players.push(giocatore)
     } 
@@ -94,12 +95,12 @@ var tabellone = {
     id: 0,
     nome: "Tabellone",
     schede: {
-        scheda1: linearNumbers15(1),
-        scheda2: linearNumbers15(2),
-        scheda3: linearNumbers15(3),
-        scheda4: linearNumbers15(4),
-        scheda5: linearNumbers15(5),
-        scheda6: linearNumbers15(6),
+        0: linearNumbers15(0),
+        1: linearNumbers15(1),
+        2: linearNumbers15(2),
+        3: linearNumbers15(3),
+        4: linearNumbers15(4),
+        5: linearNumbers15(5),
     }
     
 }
@@ -145,6 +146,7 @@ function ActivePrice(){
         premio = "ambo";
         return [terno, counter, premio]
     }
+    return[ambo,0,"ambo"]
  // 0 -si va per l'ambo, 1 si va per la terna, 2 ai va per la quaterna, 3 si va per la cinquina, 4 si va per la tombola, 5 Tombola ottenuta
 }
 var testiamoInsime=document.getElementById(`premioCorrente`);
@@ -169,8 +171,8 @@ testiamoInsime.addEventListener('click', ()=>{
             tombola = true
         }
         var premioScritto = document.getElementById(`premioCorrente`);
-        var result = ActivePrice();
-
+        let result = ActivePrice();
+        console.log(result)
         premioScritto.innerHTML =`${result[2]}`
         counter++
     
@@ -199,14 +201,15 @@ function changePrice(counter){
 // CONTROLLA CHI HA VINTO- CONTOLLORE --------------------------
 function checker(){
     var win = false;
-    prize,counter = ActivePrice();
+    prize = ActivePrice();
+    console.log(players)
     var winner = [];
-    if (prize == false && cinquina != true) {
+    if (prize[0] == false && cinquina != true) {
         for(let i = 0; i < players.length; i++){
             for(let j = 0; j < players[i].schede.length;j++){
                 for(let n =0; n < 3; n++){
                     if(players[i].schede[j][n].includes(extracted[extract.length-1])){
-                    players[i].schede[j][n].pop(extracted[extract.length-1])
+                    players[i].schede[j][n].splice(players[i].schede[j][n].indexOf(extracted[extract.length-1]), 1)
                     }
                 }
 
@@ -216,7 +219,7 @@ function checker(){
         for(let i = 0; i < players.length; i++){
             for(let j = 0; j < players[i].schede.length;j++){
                 for(let n =0; n < 3; n++){
-                    if(players[i].schede[j][n].length==3-counter){
+                    if(players[i].schede[j][n].length==3-prize[1]){
                         if(!(winner.includes(players[i].name))){
                             winner.push(players[i].name)
                         }
@@ -229,12 +232,12 @@ function checker(){
             }
     }
 
-    if(prize == false && cinquina == true){
+    if(prize[0] == false && cinquina == true){
         for(let i = 0; i < players.length; i++){
             for(let j = 0; j < players[i].schede.length;j++){
                 for(let n =0; n < 3; n++){
                     if(players[i].schede[j][n].includes(extracted[extract.length-1])){
-                    players[i].schede[j][n].pop(extracted[extract.length-1])
+                    players[i].schede[j][n].splice(players[i].schede[j][n].indexOf(extracted[extract.length-1]), 1)
                 }
                 }
 
@@ -243,11 +246,11 @@ function checker(){
 
         for(let i = 0; i < players.length; i++){
             for(let j = 0; j < players[i].schede.length;j++){
-                    if(players[i].schede[j][0].length==0 && players[i].schede[j][1].length==0 && players[i].schede[j][2].length==0){
+                    if(players[i].schede[j][0].length==4 && players[i].schede[j][1].length==4 && players[i].schede[j][2].length==4){
                         if(!(winner.includes(players[i].name))){
                             winner.push(players[i].name)
                         }
-                        changePrice(counter)
+                        changePrice(prize[1])
                         win = true
                     }
                 
@@ -255,7 +258,7 @@ function checker(){
 
             }
         }
-    return winner, win /// winner è la lista dei vincitori è counter è il premio vinto 0-Ambo, 1-Terna, 2-Quaderna, 3-Cinquina,4-Tombola
+    return [winner, win] /// winner è la lista dei vincitori è counter è il premio vinto 0-Ambo, 1-Terna, 2-Quaderna, 3-Cinquina,4-Tombola
     // Qui avvisa se in quel turno qualcuno ha vinto. Se c'è una vincita si mostra la lista dei vincitori e poi con premiattivi ActivePrize() usanto il counter
     // capiamo cosa ha vinto, visto che sarà il premio del counter attuale che si è alzato meno uno.
 } 

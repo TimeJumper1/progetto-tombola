@@ -84,9 +84,9 @@ function creaCartelle(){
     return card
     
 }
-let test = creaCartelle();
+
 function generaTabella1(){
-    creaCartelle();
+    let test = creaCartelle();
     
     for(let i = 0 ; i<3; i++){
         let variabile = test[i];
@@ -101,20 +101,22 @@ function generaTabella1(){
         }
         
     }
-    
+    addPlayer(1,test)
+    return arraySchede
     
     
 }
 // for(let j = 0 ; j < 9; j++){
     
 // }
+var arraySchede = []
 function generaTabella2(){
     
     
     // tabella 2
     let q = 0;
     for(let i = 3 ; i<6; i++){
-            test = creaCartelle();
+        test = creaCartelle();
         let variabiles = test[q];
         var rigaCartella = document.getElementsByClassName(`riga`);
         
@@ -127,7 +129,10 @@ function generaTabella2(){
         }
         q++
     }
+    addPlayer(1,test)
+    return arraySchede
 }
+console.log(creaCartelle());
 function generaTabella3(){
     
     
@@ -147,6 +152,8 @@ function generaTabella3(){
         }
         q++
     }
+    addPlayer(1,test)
+    return arraySchede
 }
 function generaTabella4(){
     
@@ -167,6 +174,8 @@ function generaTabella4(){
         }
         q++
     }
+    addPlayer(1,test)
+    return arraySchede
 }
 function generaTabella5(){
     
@@ -187,6 +196,8 @@ function generaTabella5(){
         }
         q++
     }
+    addPlayer(1,test)
+    return arraySchede
 }
 function generaTabella6(){
     
@@ -208,6 +219,9 @@ function generaTabella6(){
         }
         q++
     }
+    
+    addPlayer(1,test)
+    return arraySchede
     
 }
 // function segnaNumero(){
@@ -263,33 +277,6 @@ function inizioGame(){
     }
 }
 document.getElementById('play').addEventListener('click', inizioGame);
-// // 1 player
-// document.getElementById('play1').addEventListener('click', generaTabella1);
-// // 2 player
-// document.getElementById('play2').addEventListener('click', generaTabella1);
-// document.getElementById('play2').addEventListener('click', generaTabella2);
-// // 3 player
-// document.getElementById('play3').addEventListener('click', generaTabella1);
-// document.getElementById('play3').addEventListener('click', generaTabella2);
-// document.getElementById('play3').addEventListener('click', generaTabella3);
-// // 4 player
-// document.getElementById('play4').addEventListener('click', generaTabella1);
-// document.getElementById('play4').addEventListener('click', generaTabella2);
-// document.getElementById('play4').addEventListener('click', generaTabella3);
-// document.getElementById('play4').addEventListener('click', generaTabella4);
-// // 5 player
-// document.getElementById('play5').addEventListener('click', generaTabella1);
-// document.getElementById('play5').addEventListener('click', generaTabella2);
-// document.getElementById('play5').addEventListener('click', generaTabella3);
-// document.getElementById('play5').addEventListener('click', generaTabella4);
-// document.getElementById('play5').addEventListener('click', generaTabella5);
-// // 5 player
-// document.getElementById('play6').addEventListener('click', generaTabella1);
-// document.getElementById('play6').addEventListener('click', generaTabella2);
-// document.getElementById('play6').addEventListener('click', generaTabella3);
-// document.getElementById('play6').addEventListener('click', generaTabella4);
-// document.getElementById('play6').addEventListener('click', generaTabella5);
-// document.getElementById('play6').addEventListener('click', generaTabella6);
 
 
 
