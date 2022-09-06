@@ -58,7 +58,7 @@ function creaCartelle(){
     
     // La variabile card contiene la cartella generata,
     // contiene "-1" negli spazi vuoti
-    console.log(card);
+    
     
     var cartella =[];
     for(var i = 0; i < 6; i++){
@@ -95,8 +95,8 @@ function generaTabella1(){
         for(let j = 0 ; j < 9; j++){
             
             newSquare = document.createElement('div');
-            newSquare.classList.add(`cella-cartella`  );
-            newSquare.innerHTML = `<h2>${variabile[j]}</h2>`;  
+            newSquare.classList.add(`cella-cartella`);
+            newSquare.innerHTML = `<h2 onclick="this.style.backgroundColor='lime'">${variabile[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
         }
         
@@ -121,8 +121,8 @@ function generaTabella2(){
         for(let j = 0 ; j < 9; j++){
         
             newSquare = document.createElement('div');
-            newSquare.classList.add(`cella-cartella`  );
-            newSquare.innerHTML = `<h2>${variabiles[j]}</h2>`;  
+            newSquare.classList.add(`cella-cartella`);
+            newSquare.innerHTML = `<h2 onclick="this.style.backgroundColor='lime'">${variabiles[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
         }
         q++
@@ -141,8 +141,8 @@ function generaTabella3(){
         for(let j = 0 ; j < 9; j++){
         
             newSquare = document.createElement('div');
-            newSquare.classList.add(`cella-cartella`  );
-            newSquare.innerHTML = `<h2>${variabiles[j]}</h2>`;  
+            newSquare.classList.add(`cella-cartella`);
+            newSquare.innerHTML = `<h2 onclick="this.style.backgroundColor='lime'">${variabiles[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
         }
         q++
@@ -161,8 +161,8 @@ function generaTabella4(){
         for(let j = 0 ; j < 9; j++){
         
             newSquare = document.createElement('div');
-            newSquare.classList.add(`cella-cartella`  );
-            newSquare.innerHTML = `<h2>${variabiles[j]}</h2>`;  
+            newSquare.classList.add(`cella-cartella`);
+            newSquare.innerHTML = `<h2 onclick="this.style.backgroundColor='lime'">${variabiles[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
         }
         q++
@@ -181,8 +181,8 @@ function generaTabella5(){
         for(let j = 0 ; j < 9; j++){
         
             newSquare = document.createElement('div');
-            newSquare.classList.add(`cella-cartella`  );
-            newSquare.innerHTML = `<h2>${variabiles[j]}</h2>`;  
+            newSquare.classList.add(`cella-cartella`);
+            newSquare.innerHTML = `<h2 onclick="this.style.backgroundColor='lime'">${variabiles[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
         }
         q++
@@ -202,7 +202,7 @@ function generaTabella6(){
         
             newSquare = document.createElement('div');
             newSquare.classList.add(`cella-cartella`);
-            newSquare.innerHTML = `<h2 id="provaclic" onclick="segnaNumero()">${variabiles[j]}</h2>`;  
+            newSquare.innerHTML = `<h2 onclick="this.style.backgroundColor='lime'">${variabiles[j]}</h2>`;  
             rigaCartella[i].appendChild(newSquare);
             
         }
@@ -218,15 +218,13 @@ function generaTabella6(){
 //     }
     
 // }
-function segnaNumero() {
-    // controllo bombe nella casella e controllo vittoria o sconfitta
-    const clickedNumber = parseInt(this.querySelector('div').textContent);
-    if (clickedNumber == Number){
-        this.classList.add('pecetta')
-        
-        
-    }
-}
+// function segnaNumero() {
+    
+//     let clickedNumber = document.getElementsByClassName(`cella-casella`);
+//     let tetsNum = this.clickedNumber
+//     console.log(tetsNum)
+//     tetsNum.classList.add('pecetta')
+// }
 // richiamo creazioni cartelle
 function inizioGame(){
     var select = document.getElementById('playSelect');
